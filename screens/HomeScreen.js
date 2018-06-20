@@ -9,8 +9,9 @@ class HomeScreen extends Component {
     render(){
         return (
             <View style={styles.pageContainer}>
-                <Button title="Login"
-                    onPress={() => this.props.navigation.navigate('Login')}/>
+                <View style={styles.pageContainer}>
+                    <Text>You are now on the home screen!</Text>
+                </View>
             </View>
         );
     }

@@ -6,18 +6,17 @@ import {
     Button
 } from 'react-native';
 
-class LoginScreen extends Component {
+class ProfileScreen extends Component {
     render() {
         return (
             <View style={styles.pageContainer}>
-                <Button title="Home"
-                    onPress={() => this.props.navigation.navigate('Home')}/>
+                <Text>You are now on the profile screen!</Text>
             </View>
         );
     }
 }
 
-export default LoginScreen;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
     pageContainer: {

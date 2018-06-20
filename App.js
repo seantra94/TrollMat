@@ -2,8 +2,9 @@ import React from 'react';
 import Expo from 'expo';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
-import LoginScreen from './screens/LoginScreen';
-import { createStackNavigator } from 'react-navigation';
+import ProfileScreen from './screens/ProfileScreen';
+import { createBottomTabNavigator } from 'react-navigation';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default class App extends React.Component {
   render() {
@@ -11,14 +12,38 @@ export default class App extends React.Component {
   }
 }
 
-
-const TrollNav = createStackNavigator({
-  Login: LoginScreen,
-  Home: HomeScreen,
-});
-
-const styles = StyleSheet.create({
-  container: {
+//Creates a bottom navigation bar. 
+const TrollNav = createBottomTabNavigator({
+  Profile: { 
+    screen: ProfileScreen,
+    navigationOptions: {
+      tabBarLabel: 'Profile',
+      tabBarIcon: ({tintColor}) => (
+        <Ionicons name="ios-person" size={32} color={tintColor} />
+      )
+    }
   },
+  Home: { 
+    screen: HomeScreen,
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: ({tintColor}) => (
+        <Ionicons name='ios-home' size={32} color={tintColor} />
+      )
+    }
+  },
+}, {
+//Navigation bar settings
+  initialRouteName: 'Home',
+  order: ['Home', 'Profile'],
+  //Navbar settings
+  navigationOptions: {
+    tabBarVisible: true,
+  },
+  //Tab settings
+  tabBarOptions: {
+    activeTintColor: '#28536b',
+    inactiveTintColor: '#6a8d92'
+  }
 });
 
