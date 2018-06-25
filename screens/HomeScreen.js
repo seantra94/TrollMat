@@ -17,6 +17,8 @@ class HomeScreen extends Component {
     }
 }
 
+//#region
+
 export default HomeScreen;
 
 const styles = StyleSheet.create({
@@ -26,3 +28,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     }
 });
+
+//#endregion
