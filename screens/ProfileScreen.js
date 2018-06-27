@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
     topProfileBar: {
         height: 80,
         flexDirection: 'row',
-        alignItems: 'center',
     },
     pageContainer: {
         alignItems: 'center',
